@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script src="{{ url_for("static", filename="js/InitCart.js") }}"></script>
+    <h3 class="order" onclick="order()">Order</h3>
+    <hr>
+    <ul id="CartList"></ul>
+{% endblock %}

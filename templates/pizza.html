@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <script src="{{ url_for("static", filename="js/pizza.js") }}"></script>
+    {% for pizza in pizzas.keys() %}
+        <div class="StoreItem">
+            <h3>{{ pizza }} - {{ pizzas[pizza].cost }}$</h3>
+            <img src="{{ pizzas[pizza].image }}" alt="pizza?" class="StoreItemImage">
+            <h4 class="addtocart" onclick="addToCart('{{ pizza }}')">Add To Cart</h4>
+        </div>
+    {% endfor %}
+{% endblock %}

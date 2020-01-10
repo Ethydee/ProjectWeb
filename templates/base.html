@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ url_for("static", filename="js/cookies.js") }}"></script>
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Ron's Pizza</title>
+    {% endif %}
+</head>
+<body>
+<div class="navbar">
+    <a href="{{ url_for('index') }}" class="navitem">Home</a>
+    <a href="{{ url_for('pizza') }}" class="navitem">Pizza</a>
+    <a href="{{ url_for('drinks') }}" class="navitem">Drinks</a>
+    <a href="{{ url_for('sides') }}" class="navitem">Sides</a>
+</div>
+<a href="{{ url_for('cart') }}">
+    <div id="cart" onclick="">Cart</div>
+</a>
+{% if not noHR %}
+    <hr>
+{% endif %}
+{% block content %}{% endblock %}
+</body>
+</html>
